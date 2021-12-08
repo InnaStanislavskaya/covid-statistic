@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Table from './Table/Table'
 import Loader from './Loader/Loader'
+import DetailRowView from './DetailRowView/DetailRowView'
 import _ from 'lodash'
+
 
 class App extends Component {
 
@@ -10,6 +12,7 @@ class App extends Component {
     data: [],
     sort: 'asc', // desc
     sortField: 'index + 1',
+    row: null,
   }
 
   async componentDidMount() {
@@ -42,6 +45,10 @@ class App extends Component {
     })
   }
 
+  onRowSelect = row => {
+    this.setState({row})
+  }
+
 render() {
   return (
     <div className='container'>
@@ -51,7 +58,13 @@ render() {
           : <Table 
             data={this.state.data}
             onSort={this.onSort}
+            onRowSelect={this.onRowSelect}
           />
+      }
+      {
+        this.state.row
+          ? <DetailRowView country={this.state.row} />
+          : null
       }
     </div>
   );

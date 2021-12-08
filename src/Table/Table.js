@@ -13,7 +13,7 @@ export default props => {
     </thead>
     <tbody>
         {props.data.map((item, index) => (
-            <tr key={index}>
+            <tr key={index} onClick = {props.onRowSelect.bind(null, item)}>
                 <td>{item.index + 1}</td>
                 <td>{item.Country}</td>
                 <td>{item.TotalConfirmed}</td>
