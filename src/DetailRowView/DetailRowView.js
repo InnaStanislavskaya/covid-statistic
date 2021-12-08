@@ -1,14 +1,17 @@
 import React from 'react';
-import "./detailRowView.css"
+import "./DetailRowView.css"
 
-export default ({country}) => (
-    <div className="detailRowView">
+export default (props) => {
+    console.log(props)
+    return (
+        <div className="detailRowView">
         <div className="detailRowView_content">
-            <h3>{country.Country}</h3>
-            <div>Total Confirmed <b>{country.TotalConfirmed}</b></div>
-            <div>Total Deaths <b>{country.TotalDeaths}</b></div>
-            <div>Total Recovered <b>{country.TotalRecovered}</b></div>
-            <button>OK</button>
+            <h3>{props.country.Country}</h3>
+            <div>Total Confirmed <b>{props.country.TotalConfirmed}</b></div>
+            <div>Total Deaths <b>{props.country.TotalDeaths}</b></div>
+            <div>Total Recovered <b>{props.country.TotalRecovered}</b></div>
+            <button onClick = {props.onOkPressed.bind(null)}>OK</button>
         </div>
     </div>
-)
+    )
+}

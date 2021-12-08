@@ -49,6 +49,10 @@ class App extends Component {
     this.setState({row})
   }
 
+  onOkPressed = () => {
+    this.setState({row:null})
+  }
+
 render() {
   return (
     <div className='container'>
@@ -63,7 +67,9 @@ render() {
       }
       {
         this.state.row
-          ? <DetailRowView country={this.state.row} />
+          ? <DetailRowView country={this.state.row}
+          onOkPressed={this.onOkPressed}
+          />
           : null
       }
     </div>
