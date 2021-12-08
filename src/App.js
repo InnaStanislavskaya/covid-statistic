@@ -19,6 +19,9 @@ class App extends Component {
     })
   }
 
+  onSort = (sortField) => {
+    console.log(sortField)
+  }
 
 render() {
   return (
@@ -28,6 +31,7 @@ render() {
           ? <Loader />
           : <Table 
             data={this.state.data}
+            onSort={this.onSort}
           />
       }
     </div>
