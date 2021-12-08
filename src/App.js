@@ -14,7 +14,11 @@ class App extends Component {
 
   async componentDidMount() {
     const response = await fetch(`https://api.covid19api.com/summary`)
-    const data = await response.json()
+    const rawData = await response.json()
+    const data = rawData.Countries.map((c, index) => {
+      c.index = index
+      return c
+    })
   
     this.setState({
       isLoading: false,
@@ -23,7 +27,7 @@ class App extends Component {
   }
 
   onSort = sortField => {
-    const clonedData = this.state.data.Countries.concat()
+    const clonedData = this.state.data.concat()
     const sortType = this.state.sort === 'asc' ? 'desc' : 'asc'
 
     const orderedData = _.orderBy(clonedData, sortField, sortType)
@@ -31,7 +35,7 @@ class App extends Component {
     data.Countries = orderedData
 
     this.setState({
-      data,
+      data: orderedData,
       sort: sortType,
       sortField,
 
