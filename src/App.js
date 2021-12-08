@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import Table from './Table/Table'
 import Loader from './Loader/Loader'
+import _ from 'lodash'
 
 class App extends Component {
 
   state = {
     isLoading: true,
     data: [],
+    sort: 'asc', // desc
+    sortField: 'index + 1',
   }
 
   async componentDidMount() {
@@ -19,8 +22,18 @@ class App extends Component {
     })
   }
 
-  onSort = (sortField) => {
-    console.log(sortField)
+  onSort = sortField => {
+    const clonedData = this.state.data.concat()
+    const sortType = this.state.sort === 'asc' ? 'desc' : 'asc'
+
+    const orderedData = _.orderBy(clonedData, sortField, sortType)
+
+    this.setState({
+      data: orderedData,
+      sort: sortType,
+      sortField,
+
+    })
   }
 
 render() {
