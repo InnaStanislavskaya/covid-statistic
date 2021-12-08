@@ -14,7 +14,7 @@ export default props => {
     <tbody>
         {props.data.map((item, index) => (
             <tr key={index}>
-                <td>{item.index}</td>
+                <td>{item.index + 1}</td>
                 <td>{item.Country}</td>
                 <td>{item.TotalConfirmed}</td>
             </tr>
