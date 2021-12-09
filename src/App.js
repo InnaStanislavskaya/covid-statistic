@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Table from './Table/Table'
 import Loader from './Loader/Loader'
 import DetailRowView from './DetailRowView/DetailRowView'
+import TableSearch from './TableSearch/TableSearch'
 import _ from 'lodash'
 
 
@@ -10,6 +11,7 @@ class App extends Component {
   state = {
     isLoading: true,
     data: [],
+    search: '',
     sort: 'asc', // desc
     sortField: 'index + 1',
     row: null,
@@ -53,17 +55,26 @@ class App extends Component {
     this.setState({row:null})
   }
 
+  searchHandler = search => {
+    console.log(search)
+  }
+
+
 render() {
+
   return (
     <div className='container'>
       {
         this.state.isLoading
           ? <Loader />
-          : <Table 
-            data={this.state.data}
-            onSort={this.onSort}
-            onRowSelect={this.onRowSelect}
+          : <React.Fragment>
+            <TableSearch onSearch={this.searchHandler}/>
+            <Table 
+              data={this.state.data}
+              onSort={this.onSort}
+              onRowSelect={this.onRowSelect}
           />
+          </React.Fragment>
       }
       {
         this.state.row
