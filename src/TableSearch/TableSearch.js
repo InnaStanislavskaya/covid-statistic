@@ -7,6 +7,7 @@ export default (props) => {
 
     const valueChangeHandler = event => {
         setValue(event.target.value)
+        props.onSearch(event.target.value)
     }
 
     return (

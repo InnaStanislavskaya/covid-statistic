@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     isLoading: true,
     data: [],
+    filteredData: [],
     search: '',
     sort: 'asc', // desc
     sortField: 'index + 1',
@@ -28,6 +29,7 @@ class App extends Component {
     this.setState({
       isLoading: false,
       data: data,
+      filteredData: data,
     })
   }
 
@@ -56,7 +58,9 @@ class App extends Component {
   }
 
   searchHandler = search => {
-    console.log(search)
+    const filteredData = this.state.data.filter(country => {
+      return country['Country'].includes(search.toLowerCase())
+    })
   }
 
 
@@ -70,7 +74,7 @@ render() {
           : <React.Fragment>
             <TableSearch onSearch={this.searchHandler}/>
             <Table 
-              data={this.state.data}
+              data={this.state.filteredData}
               onSort={this.onSort}
               onRowSelect={this.onRowSelect}
           />
