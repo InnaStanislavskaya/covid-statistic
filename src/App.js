@@ -58,9 +58,17 @@ class App extends Component {
   }
 
   searchHandler = search => {
-    const filteredData = this.state.data.filter(country => {
-      return country['Country'].includes(search.toLowerCase())
+    if(!search || search === ''){
+      this.setState({filteredData: this.state.data});
+      return
+    }
+
+    const filteredData = this.state.data.filter(item => {
+      return item.Country.toLowerCase().includes(search.toLowerCase())
     })
+
+    this.setState({filteredData})
+    
   }
 
 

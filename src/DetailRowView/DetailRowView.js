@@ -1,7 +1,7 @@
 import React from 'react';
 import "./DetailRowView.css"
 
-export default (props) => {
+function DetailRowView (props){
     console.log(props)
     return (
         <div className="detailRowView">
@@ -15,3 +15,5 @@ export default (props) => {
     </div>
     )
 }
+
+export default DetailRowView

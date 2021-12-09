@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './TableSearch.css'
 
-export default (props) => {
+function TableSearch (props) {
 
     const [value, setValue] = useState('')
 
@@ -29,3 +29,5 @@ export default (props) => {
         </div>
     )
 }
+
+export default TableSearch

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default props => {
+function Table (props) {
 
     return (
         <table className="table">
@@ -23,6 +23,8 @@ export default props => {
     </table>
     )
 }
+
+export default Table
 
 
 
