@@ -28,7 +28,7 @@ function TableSearch (props) {
                 <button 
                     type="button"
                     onClick={() => props.onSearch(value)}
-                    ><i class="fas fa-search icon"></i></button>
+                    ><i className="fas fa-search icon"></i></button>
             </div>
         </div>
     )
