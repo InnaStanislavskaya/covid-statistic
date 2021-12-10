@@ -17,21 +17,18 @@ function TableSearch (props) {
                 <img src={logo} alt="logo"/>
                 <div className="header_logo_text">STATISTIC</div>
             </div>
-            <div className="input-group w-25 mb-3 mt-3 header_search">
+            <div className="header_search">
                 <input 
                     type="text" 
-                    className="form-control" 
-                    placeholder="Search" 
+                    
+                    placeholder="Search..." 
                     onChange={valueChangeHandler}
                     value={value}
                 />
-                <div className="input-group-append">
-                    <button 
-                        className="btn btn-outline-secondary" 
-                        type="button"
-                        onClick={() => props.onSearch(value)}
-                    >Button</button>
-                </div>
+                <button 
+                    type="button"
+                    onClick={() => props.onSearch(value)}
+                    ><i class="fas fa-search icon"></i></button>
             </div>
         </div>
     )
