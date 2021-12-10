@@ -11,8 +11,45 @@
 }
 
 .detailRowView_content {
+    width: 400px;
     padding: 22px;
     border-radius: 12px;
     background-color: white;
     
+}
+
+.detailRowView_content button {
+    color: white;
+    background-color:rgba(33, 150, 243, 1);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    margin-top: 20px;
+}
+
+.detailRowView_content_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    color: rgba(102, 102, 102, 1);
+    ;
+
+}
+
+.detailRowView_icon {
+    padding-right: 15px;
+}
+
+.detailRowView_text {
+    display: flex;
+    align-items: center;
+}
+
+h3 {
+    text-align: center;
 }
