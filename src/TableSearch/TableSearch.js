@@ -20,7 +20,6 @@ function TableSearch (props) {
             <div className="header_search">
                 <input 
                     type="text" 
-                    
                     placeholder="Search..." 
                     onChange={valueChangeHandler}
                     value={value}

@@ -12,36 +12,44 @@ thead {
 }
 
 .table thead tr th {
+    padding: 26px;
     border-right: 1px solid white;
-    background-color:rgba(33, 150, 243, 1)
+    background-color:rgba(33, 150, 243, 1);
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Roboto-Bold', sans-serif;
 }
 
 .table thead tr th:last-child {
     border-right: none;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 20px 20px 0;
 }
 
 .table thead tr th:first-child {
     text-align: center;
-    border-radius: 8px 0 0 8px;
+    border-radius: 20px 0 0 20px;
 
 }
 
 .table tbody tr td {
+    padding: 26px;
     border-right: 1px solid rgba(178, 178, 178, 1);
     box-shadow: 0 1px 1px rgba(0,0,0,0.25);
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Roboto-Bold', sans-serif;
     
 }
 
 .table tbody tr td:last-child {
     border-right: none;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 20px 20px 0;
 }
 
 .table tbody tr td:first-child{
     text-align: center;
     border-right: none;
-    border-radius: 8px 0 0 8px;
+    border-radius: 20px 0 0 20px;
 }
 
 
